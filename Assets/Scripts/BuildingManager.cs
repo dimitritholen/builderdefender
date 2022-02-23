@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+    [SerializeField] private Transform mouseVisualTransform;
+
     private Camera _camera;
 
     private void Start()
@@ -13,7 +15,7 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(GetWorldPosition());
+        mouseVisualTransform.position = GetWorldPosition();
     }
 
     private Vector3 GetWorldPosition()
