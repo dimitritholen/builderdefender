@@ -8,11 +8,15 @@ public class BuildingManager : MonoBehaviour
     private BuildingTypeListSO _buildingTypeList;
     private Camera _camera;
 
+    private void Awake()
+    {
+        _buildingTypeList = Resources.Load<BuildingTypeListSO>(nameof(BuildingTypeListSO));
+        _buildingType = _buildingTypeList.list[0];
+    }
+
     private void Start()
     {
         _camera = Camera.main;
-        _buildingTypeList = Resources.Load<BuildingTypeListSO>(nameof(BuildingTypeListSO));
-        _buildingType = _buildingTypeList.list[0];
     }
 
     private void Update()
